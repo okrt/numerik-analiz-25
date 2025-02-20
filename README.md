@@ -1,0 +1,1 @@
+# numerik-analiz-25
