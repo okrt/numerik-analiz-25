@@ -24,7 +24,7 @@ def gauss_seidel_yontemi(k, y, cozum_tahminleri):
 # Denklem sistemi:
 # 8x1 + 3x2 - 3x3 = 14
 # -2x1 - 8x2 + 5x3 = 5
-# 3x1 + 5x2 + 10x3 = -8
+# 3x1 + 5x2 + 10x3 = -10
 
 katsayi_matris = [
     [8, 3, -3],
@@ -41,6 +41,17 @@ for iterasyon in range(10):
     
     # Hata oranı: Her değişken için yeni ve eski tahminler arasındaki mutlak farkın maksimumu
     hata_orani = max(abs(yeni - eski) for yeni, eski in zip(cozum_tahminleri, onceki_tahminler))
+    """
+    Üstteki satırın uzun hali:
+    hata_farklari = []
+
+    for i in range(len(cozum_tahminleri)):
+        fark = abs(cozum_tahminleri[i] - onceki_tahminler[i])
+        hata_farklari.append(fark)
+
+    hata_orani = max(hata_farklari)
+  
+    """
     if hata_orani < 1e-3:
         break
     
